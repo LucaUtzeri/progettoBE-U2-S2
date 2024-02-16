@@ -1,17 +1,16 @@
 package lucautzeri.progettoS2.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "workers")
 public class Worker {
@@ -23,5 +22,5 @@ public class Worker {
     private String surname;
     private String email;
     @OneToMany
-    private Device device;
+    private List<Device> deviceList;
 }
